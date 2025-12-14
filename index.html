@@ -1,36 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Curriculo vitae</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de IHC: Métodos de Observação</title>
+    <!-- Carrega o Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind para usar a fonte Inter e cores customizadas -->
     <style>
-        .container {
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Cinza claro de fundo */
+        }
+        .slide {
+            min-height: 100vh; /* Faz cada slide ocupar a altura total da tela */
             display: flex;
-        }
-        .image-container {
-            width: 200px; /* Ajuste a largura conforme necessário */
-            height: 200px; /* Ajuste a altura conforme necessário */
-        }
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Ajusta a imagem para caber dentro do contêiner */
-        }
-        .paragraph-container {
-            margin-left: 20px; /* Espaço entre a imagem e o parágrafo */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
         }
     </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ihc-primary': '#4c51bf', // Indigo escuro
+                        'ihc-secondary': '#a0aec0', // Cinza azulado
+                        'ihc-accent': '#68d391', // Verde suave
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="container">
-        <div class="image-container">
-            <img src="https://avatars.githubusercontent.com/u/205984710?v=4" alt="Imagem">
-        </div>
-        <div class="paragraph-container">
-            <p>Antônio Felipe Santos da Cruz.
-	    <br>18.12.2000</p>
-        </div>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Container Principal -->
+    <div class="container mx-auto max-w-4xl pt-8">
+
+        <!-- SLIDE 1: TÍTULO -->
+        <section class="slide bg-ihc-primary text-white text-center rounded-xl transition-all duration-300">
+            <h1 class="text-6xl font-extrabold mb-4 animate-pulse">
+                Avaliação por Observação na IHC
+            </h1>
+            <p class="text-2xl mt-8 font-light">
+                Foco em Teste de Usabilidade, MAC e Prototipação
+            </p>
+            <p class="text-xl mt-12 opacity-80">
+                A observação direta do usuário: Capturando o que realmente acontece.
+            </p>
+        </section>
+
+        <!-- SLIDE 2: TÓPICO 1 - TESTE DE USABILIDADE -->
+        <section class="slide bg-gray-100 shadow-lg p-12 transition-all duration-300">
+            <h2 class="text-4xl font-bold text-ihc-primary mb-8 border-b-4 border-ihc-primary pb-2">
+                1. Teste de Usabilidade (Usability Testing)
+            </h2>
+            <div class="text-left w-full space-y-6 text-lg">
+                <p class="font-semibold text-xl">
+                    É a técnica fundamental para observar usuários interagindo com um sistema ou protótipo para realizar tarefas específicas.
+                </p>
+                
+                <h3 class="text-2xl font-semibold text-ihc-primary">O que Avaliamos?</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li>
+                        <strong>Eficiência:</strong> Tempo gasto para completar tarefas.
+                    </li>
+                    <li>
+                        <strong>Eficácia:</strong> Taxa de sucesso na conclusão das tarefas e número de erros.
+                    </li>
+                    <li>
+                        <strong>Satisfação:</strong> Experiência subjetiva e frustrações do usuário.
+                    </li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-ihc-primary mt-6">Método de Observação Chave</h3>
+                <p class="italic bg-white p-3 rounded-lg border-l-4 border-ihc-accent">
+                    <strong>Protocolo "Think Aloud" (Pensar em Voz Alta):</strong> O usuário verbaliza seus processos mentais, permitindo ao avaliador entender a **razão** por trás dos erros e acertos observados.
+                </p>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: TÓPICO 2 - MAC - MÉTODO DE AVALIAÇÃO DE COMUNICABILIDADE -->
+        <section class="slide bg-ihc-primary text-white shadow-lg p-12 transition-all duration-300">
+            <h2 class="text-4xl font-bold mb-8 border-b-4 border-white pb-2">
+                2. Método de Avaliação de Comunicabilidade (MAC)
+            </h2>
+            <div class="text-left w-full space-y-6 text-lg">
+                <p class="font-semibold text-xl">
+                    Foca na qualidade do diálogo entre Humano e Computador, analisando se o sistema comunica suas funcionalidades e estados de forma clara.
+                </p>
+
+                <h3 class="text-2xl font-semibold text-ihc-accent">Dimensões de Avaliação (P3)</h3>
+                <div class="grid md:grid-cols-3 gap-6 mt-4 text-sm">
+                    <div class="bg-indigo-700 p-4 rounded-lg shadow-md">
+                        <span class="text-lg font-bold block mb-1">Perspectiva do Diálogo</span>
+                        <p>O sistema se comporta como um parceiro de conversação eficaz (e.g., feedback imediato, respostas apropriadas).</p>
+                    </div>
+                    <div class="bg-indigo-700 p-4 rounded-lg shadow-md">
+                        <span class="text-lg font-bold block mb-1">Perspectiva do Conteúdo</span>
+                        <p>As mensagens transmitidas (textos, ícones) são compreensíveis, relevantes e sem ambiguidades.</p>
+                    </div>
+                    <div class="bg-indigo-700 p-4 rounded-lg shadow-md">
+                        <span class="text-lg font-bold block mb-1">Perspectiva da Forma</span>
+                        <p>A apresentação visual e estética das mensagens garante legibilidade e clareza (sintaxe visual).</p>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-semibold text-ihc-accent mt-6">Diferencial do MAC</h3>
+                <p>
+                    Diferente do Teste de Usabilidade, que observa a *ação*, o MAC observa a *comunicação* que leva àquela ação. Identifica a raiz das falhas de interação.
+                </p>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: TÓPICO 3 - PROTOTIPAÇÃO -->
+        <section class="slide bg-white shadow-lg p-12 transition-all duration-300">
+            <h2 class="text-4xl font-bold text-ihc-primary mb-8 border-b-4 border-ihc-primary pb-2">
+                3. Prototipação como Artefato para Avaliação
+            </h2>
+            <div class="text-left w-full space-y-6 text-lg">
+                <p class="font-semibold text-xl">
+                    Protótipos são representações parciais do produto final, essenciais para realizar avaliações observacionais de forma iterativa e de baixo custo.
+                </p>
+                
+                <h3 class="text-2xl font-semibold text-ihc-primary">Tipos de Fidelidade e Uso na Observação</h3>
+                <div class="grid md:grid-cols-2 gap-6 mt-4">
+                    <div class="border-2 border-ihc-secondary p-4 rounded-lg bg-gray-50">
+                        <span class="text-xl font-bold block mb-2">Baixa Fidelidade (Lo-Fi)</span>
+                        <ul class="list-disc list-inside ml-4 text-base">
+                            <li><strong>Exemplo:</strong> Esboços, wireframes em papel.</li>
+                            <li><strong>Avaliação:</strong> Usado no início para testar o fluxo de tarefas e conceitos de navegação (Usabilidade).</li>
+                            <li><strong>Vantagem:</strong> Facilidade em descartar e refazer, foco no design de interação, não nos detalhes visuais.</li>
+                        </ul>
+                    </div>
+                    <div class="border-2 border-ihc-secondary p-4 rounded-lg bg-gray-50">
+                        <span class="text-xl font-bold block mb-2">Alta Fidelidade (Hi-Fi)</span>
+                        <ul class="list-disc list-inside ml-4 text-base">
+                            <li><strong>Exemplo:</strong> Mockups interativos (Figma/Adobe XD), código funcional parcial.</li>
+                            <li><strong>Avaliação:</strong> Usado para testes realistas de usabilidade e, principalmente, de comunicabilidade (MAC).</li>
+                            <li><strong>Vantagem:</strong> Captura problemas de design visual, cores e interações refinadas que afetam o diálogo.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: SÍNTESE FINAL -->
+        <section class="slide bg-ihc-accent text-gray-900 text-center rounded-xl transition-all duration-300">
+            <h2 class="text-4xl font-bold mb-8">
+                Síntese da Avaliação por Observação
+            </h2>
+            <div class="text-xl max-w-2xl mx-auto space-y-6 text-left p-6 bg-white rounded-lg shadow-xl">
+                <p class="font-medium text-ihc-primary">
+                    O ciclo de avaliação observacional é completo quando combinamos as perspectivas:
+                </p>
+                <ul class="list-disc list-inside space-y-3 font-medium">
+                    <li>
+                        <strong>Protótipos</strong> fornecem o objeto para teste, garantindo agilidade.
+                    </li>
+                    <li>
+                        O **Teste de Usabilidade** avalia o desempenho prático e a eficiência das *ações* do usuário.
+                    </li>
+                    <li>
+                        O **MAC** avalia a qualidade do *diálogo* e das *mensagens* do sistema.
+                    </li>
+                </ul>
+            </div>
+            <h3 class="text-4xl font-extrabold mt-12 text-ihc-primary">
+                Obrigado!
+            </h3>
+            <p class="text-lg mt-4">[Seu Nome/Grupo] | [Nome da Disciplina]</p>
+        </section>
+
     </div>
-    <p>TI formado no IFAC.</p>
-    <p>Programador full-stack formado na Web Academy.</p>
 </body>
 </html>
