@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Projeto: Agrupamento de Clientes por Perfil</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/dracula.min.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/monokai.min.css">
+    
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 {
+            color: #bd93f9;
+            text-transform: none;
+        }
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #50fa7b;
+        }
+        .cluster-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin: 5px;
+        }
+        .c-0 { background: #ff5555; }
+        .c-1 { background: #50fa7b; color: #282a36; }
+        .c-2 { background: #8be9fd; color: #282a36; }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Capa -->
+            <section data-background-gradient="linear-gradient(to bottom, #282a36, #44475a)">
+                <h1>Agrupamento de Clientes</h1>
+                <h3>Classificação de Sentimentos e Perfis de Consumo com IA</h3>
+                <p>
+                    <small>Apresentação de Projeto de Ciência de Dados</small>
+                </p>
+            </section>
+
+            <!-- Introdução -->
+            <section>
+                <h2>O Problema</h2>
+                <div class="highlight-box">
+                    <ul>
+                        <li>Volume massivo de feedbacks manuais.</li>
+                        <li>Dificuldade em identificar clientes em risco (Churn).</li>
+                        <li>Falta de clareza sobre os motivos de insatisfação.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>A Solução</h2>
+                <p>Uma pipeline de Inteligência Artificial para processamento de linguagem natural (NLP):</p>
+                <div style="display: flex; justify-content: space-around; margin-top: 50px;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #ffb86c;">1. Classificar</h3>
+                        <p>Sentimento (Positivo/Negativo)</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <h3 style="color: #ffb86c;">2. Agrupar</h3>
+                        <p>Clusters por similaridade de texto</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Metodologia -->
+            <section>
+                <section>
+                    <h2>Metodologia Técnica</h2>
+                    <p>Como transformamos texto em decisões?</p>
+                </section>
+                <section>
+                    <h3>Pré-processamento</h3>
+                    <pre><code class="python" data-trim>
+def limpar_texto(texto):
+    texto = texto.lower()
+    texto = re.sub(r'[^a-zà-ú\s]', '', texto)
+    return texto
+                    </code></pre>
+                    <p>Limpamos ruídos e padronizamos os termos para a análise.</p>
+                </section>
+                <section>
+                    <h3>Modelagem</h3>
+                    <ul>
+                        <li><strong>TF-IDF:</strong> Transforma palavras em pesos matemáticos baseados na relevância.</li>
+                        <li><strong>Naive Bayes:</strong> Classificador probabilístico para prever o sentimento.</li>
+                        <li><strong>K-Means:</strong> Algoritmo de aprendizado não supervisionado para criar os clusters.</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Resultados -->
+            <section>
+                <h2>Análise de Clusters</h2>
+                <p>Perfis identificados pelo algoritmo:</p>
+                <div style="margin-top: 30px;">
+                    <div class="cluster-tag c-0">Cluster 0: Críticos/Logística</div>
+                    <div class="cluster-tag c-1">Cluster 1: Promotores/Sucesso</div>
+                    <div class="cluster-tag c-2">Cluster 2: Dúvidas/Qualidade</div>
+                </div>
+                <p style="font-size: 0.7em; margin-top: 20px;">*Baseado nos termos mais representativos extraídos via TF-IDF.</p>
+            </section>
+
+            <!-- Visualização (Placeholder para seus prints) -->
+            <section>
+                <h2>Visualização de Dados</h2>
+                <p>A distribuição de sentimentos por cluster nos permite focar onde dói mais no negócio.</p>
+                <div class="highlight-box" style="border-left-color: #ff79c6;">
+                    <p>💡 <strong>Dica:</strong> Insira aqui os gráficos gerados pelo seu código (Countplot e Barplot).</p>
+                </div>
+            </section>
+
+            <!-- Plano de Ação -->
+            <section>
+                <h2>Plano de Ação</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="highlight-box">
+                        <h4 style="color: #ff5555;">Prioridade Máxima</h4>
+                        <p style="font-size: 0.8em;">Contatar imediatamente os clientes do Cluster 0 com sentimento negativo.</p>
+                    </div>
+                    <div class="highlight-box" style="border-left-color: #8be9fd;">
+                        <h4 style="color: #8be9fd;">Fidelização</h4>
+                        <p style="font-size: 0.8em;">Enviar convite para programa VIP para o Cluster 1 (Promotores).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Encerramento -->
+            <section data-background="#50fa7b" style="color: #282a36;">
+                <h1 style="color: #282a36;">Obrigado!</h1>
+                <p>Dúvidas?</p>
+                <p style="font-size: 0.6em;">Repositório: github.com/seu-usuario/projeto-clusters</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+            slideNumber: 'c/t',
+            transition: 'convex'
+        });
+    </script>
+</body>
+</html>
