@@ -1,164 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>Projeto: Agrupamento de Clientes por Perfil</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/dracula.min.css">
-
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/monokai.min.css">
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo | Antônio Felipe Santos da Cruz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .reveal h1, .reveal h2, .reveal h3 {
-            color: #bd93f9;
-            text-transform: none;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
         }
-        .highlight-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 5px solid #50fa7b;
+
+        .section-header {
+            border-bottom: 2px solid #38bdf8;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem;
         }
-        .cluster-tag {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            margin: 5px;
+
+        .resume-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background-color: white;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border-radius: 1rem;
+            overflow: hidden;
         }
-        .c-0 { background: #ff5555; }
-        .c-1 { background: #50fa7b; color: #282a36; }
-        .c-2 { background: #8be9fd; color: #282a36; }
     </style>
 </head>
-<body>
-    <div class="reveal">
-        <div class="slides">
+<body class="p-4 md:p-8">
 
-            <!-- Capa -->
-            <section data-background-gradient="linear-gradient(to bottom, #282a36, #44475a)">
-                <h1>Agrupamento de Clientes</h1>
-                <h3>Classificação de Sentimentos e Perfis de Consumo com IA</h3>
-                <p>
-                    <small>Apresentação de Projeto de Ciência de Dados</small>
-                </p>
-            </section>
-
-            <!-- Introdução -->
-            <section>
-                <h2>O Problema</h2>
-                <div class="highlight-box">
-                    <ul>
-                        <li>Volume massivo de feedbacks manuais.</li>
-                        <li>Dificuldade em identificar clientes em risco (Churn).</li>
-                        <li>Falta de clareza sobre os motivos de insatisfação.</li>
-                    </ul>
+    <main class="resume-container">
+        
+        <!-- Cabeçalho -->
+        <header class="bg-[#0f172a] text-white p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+            <img src="https://avatars.githubusercontent.com/u/205984710?v=4" 
+                 alt="Foto de Antônio Felipe Santos da Cruz" 
+                 class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-sky-500 object-cover">
+            
+            <div class="text-center md:text-left space-y-2">
+                <h1 class="text-3xl md:text-4xl font-bold">Antônio Felipe Santos da Cruz</h1>
+                <p class="text-sky-400 text-lg font-medium">Técnico em Informática e Desenvolvedor Web Júnior</p>
+                
+                <div class="grid grid-cols-1 gap-1 text-sm text-slate-300 pt-3">
+                    <p><i class="fas fa-phone text-sky-400 w-5"></i> (68) 99993-9559</p>
+                    <p><i class="fas fa-envelope text-sky-400 w-5"></i> hbmhad@outlook.com | hbmhad@gmail.com</p>
+                    <p><i class="fab fa-github text-sky-400 w-5"></i> <a href="https://github.com/antoniofelipecruz" target="_blank" class="text-sky-400 hover:underline">github.com/antoniofelipecruz</a></p>
+                    <p><i class="fas fa-map-marker-alt text-sky-400 w-5"></i> Rio Branco – Acre</p>
+                    <p><i class="fas fa-calendar-alt text-sky-400 w-5"></i> Nascimento: 18/12/2000 | Solteiro</p>
                 </div>
-            </section>
+            </div>
+        </header>
 
-            <section>
-                <h2>A Solução</h2>
-                <p>Uma pipeline de Inteligência Artificial para processamento de linguagem natural (NLP):</p>
-                <div style="display: flex; justify-content: space-around; margin-top: 50px;">
-                    <div style="text-align: center;">
-                        <h3 style="color: #ffb86c;">1. Classificar</h3>
-                        <p>Sentimento (Positivo/Negativo)</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <h3 style="color: #ffb86c;">2. Agrupar</h3>
-                        <p>Clusters por similaridade de texto</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Metodologia -->
-            <section>
+        <div class="p-8 md:p-12 grid grid-cols-1 md:grid-cols-12 gap-10">
+            
+            <!-- Coluna Lateral -->
+            <aside class="md:col-span-4 space-y-8">
+                
                 <section>
-                    <h2>Metodologia Técnica</h2>
-                    <p>Como transformamos texto em decisões?</p>
+                    <h2 class="section-header">Objetivo</h2>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Atuar neste setor tecnológico vai ampliar ainda mais os meus conhecimentos, desenvolvimento profissional e de vida, sempre em harmonia com a qualidade do meu trabalho e a preparação dos meus dias para obter os objetivos esperados no ato da minha contratação.
+                    </p>
                 </section>
+
                 <section>
-                    <h3>Pré-processamento</h3>
-                    <pre><code class="python" data-trim>
-def limpar_texto(texto):
-    texto = texto.lower()
-    texto = re.sub(r'[^a-zà-ú\s]', '', texto)
-    return texto
-                    </code></pre>
-                    <p>Limpamos ruídos e padronizamos os termos para a análise.</p>
+                    <h2 class="section-header">Capacitação</h2>
+                    <div class="text-sm text-slate-600 space-y-2">
+                        <p class="font-bold text-slate-800">Web Academy</p>
+                        <p>Capacitação em desenvolvimento web full-stack. Turma 1 (2022).</p>
+                    </div>
                 </section>
+
+            </aside>
+
+            <!-- Coluna Principal -->
+            <div class="md:col-span-8 space-y-10">
+                
                 <section>
-                    <h3>Modelagem</h3>
-                    <ul>
-                        <li><strong>TF-IDF:</strong> Transforma palavras em pesos matemáticos baseados na relevância.</li>
-                        <li><strong>Naive Bayes:</strong> Classificador probabilístico para prever o sentimento.</li>
-                        <li><strong>K-Means:</strong> Algoritmo de aprendizado não supervisionado para criar os clusters.</li>
-                    </ul>
+                    <h2 class="section-header">Experiência</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="font-bold text-lg text-slate-800">Desenvolvedor Web</h3>
+                                <span class="text-xs font-bold text-sky-600">2022/08 - 2022/10</span>
+                            </div>
+                            <p class="text-sm font-semibold text-slate-500 mb-2">Web Academy</p>
+                            <p class="text-sm text-slate-600">
+                                Criação de uma aplicação que gerencia produtos. Trabalho em equipe com outros desenvolvedores utilizando metodologias ágeis de desenvolvimento.
+                            </p>
+                        </div>
+                    </div>
                 </section>
-            </section>
 
-            <!-- Resultados -->
-            <section>
-                <h2>Análise de Clusters</h2>
-                <p>Perfis identificados pelo algoritmo:</p>
-                <div style="margin-top: 30px;">
-                    <div class="cluster-tag c-0">Cluster 0: Críticos/Logística</div>
-                    <div class="cluster-tag c-1">Cluster 1: Promotores/Sucesso</div>
-                    <div class="cluster-tag c-2">Cluster 2: Dúvidas/Qualidade</div>
-                </div>
-                <p style="font-size: 0.7em; margin-top: 20px;">*Baseado nos termos mais representativos extraídos via TF-IDF.</p>
-            </section>
-
-            <!-- Visualização (Placeholder para seus prints) -->
-            <section>
-                <h2>Visualização de Dados</h2>
-                <p>A distribuição de sentimentos por cluster nos permite focar onde dói mais no negócio.</p>
-                <div class="highlight-box" style="border-left-color: #ff79c6;">
-                    <p>💡 <strong>Dica:</strong> Insira aqui os gráficos gerados pelo seu código (Countplot e Barplot).</p>
-                </div>
-            </section>
-
-            <!-- Plano de Ação -->
-            <section>
-                <h2>Plano de Ação</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div class="highlight-box">
-                        <h4 style="color: #ff5555;">Prioridade Máxima</h4>
-                        <p style="font-size: 0.8em;">Contatar imediatamente os clientes do Cluster 0 com sentimento negativo.</p>
+                <section>
+                    <h2 class="section-header">Educação</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-bold text-slate-800">Tecnólogo em TI (Sistemas para Internet)</h3>
+                            <p class="text-sm text-sky-600 font-medium">Instituto Federal do Acre (IFAC)</p>
+                            <p class="text-xs text-slate-400 uppercase mt-1">Em curso</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-800">Técnico em Informática</h3>
+                            <p class="text-sm text-sky-600 font-medium">Instituto Federal do Acre (IFAC)</p>
+                            <p class="text-sm text-slate-600 mt-1">Formação técnica integrada ao Ensino Médio.</p>
+                            <p class="text-xs text-slate-400 uppercase mt-1">Concluído</p>
+                        </div>
                     </div>
-                    <div class="highlight-box" style="border-left-color: #8be9fd;">
-                        <h4 style="color: #8be9fd;">Fidelização</h4>
-                        <p style="font-size: 0.8em;">Enviar convite para programa VIP para o Cluster 1 (Promotores).</p>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <!-- Encerramento -->
-            <section data-background="#50fa7b" style="color: #282a36;">
-                <h1 style="color: #282a36;">Obrigado!</h1>
-                <p>Dúvidas?</p>
-                <p style="font-size: 0.6em;">Repositório: github.com/seu-usuario/projeto-clusters</p>
-            </section>
-
+            </div>
         </div>
-    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"></script>
-    <script>
-        Reveal.initialize({
-            hash: true,
-            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
-            slideNumber: 'c/t',
-            transition: 'convex'
-        });
-    </script>
+        <footer class="bg-slate-50 p-8 text-center border-t border-slate-100">
+            <p class="text-slate-500 text-sm italic">
+                Antônio Felipe Santos da Cruz • Rio Branco, AC
+            </p>
+        </footer>
+    </main>
+
 </body>
 </html>
